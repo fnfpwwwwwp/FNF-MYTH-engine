@@ -4,7 +4,7 @@ package;
 import Discord.DiscordClient;
 #end
 import flixel.FlxG;
-import api.GameJolt;
+import GameJolt;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
