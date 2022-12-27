@@ -35,9 +35,9 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-		'mods',
 		'credits',
-		'options'
+		'options',
+		'mods'
 	];
 
 	var magenta:FlxSprite;
@@ -237,14 +237,14 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new StoryMenuState());
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
-									case 'mods':
-										MusicBeatState.switchState(new ModsMenuState());
 									//case 'awards':
 										//MusicBeatState.switchState(new AchievementsMenuState());
 									case 'credits':
 										MusicBeatState.switchState(new CreditsState());
 									case 'options':
 										LoadingState.loadAndSwitchState(new options.OptionsState());
+									case 'mods':
+										MusicBeatState.switchState(new ModsMenuState());
 								}
 							});
 						}
