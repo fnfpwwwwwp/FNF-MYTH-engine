@@ -482,25 +482,6 @@ class GameJolt extends MusicBeatState
 			case SHA1:
 				URL += '&signature=' + Sha1.encode(URL + private_key);
 		}
-
-		http.onData = function(data:String)
-		{
-			var http:Http = new Http();
-			
-			trace('[COMPLETE] - Data was sended successfully from the API! Casting to the callback...');
-			if (CallBack != null)
-				CallBack(Json.parse(data));
-			else
-				trace('[WARNING] - The Callback is null!');
-		}
-		http.onError = function(msg:String)
-		{
-			trace('[ERROR] - $msg');
-			CallBack(null);
-		}
-		http.request();
-	}
-
 	//////////////////////////////////////////////////////
 
 	static function get_initialized():Bool
