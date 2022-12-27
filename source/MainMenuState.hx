@@ -4,6 +4,7 @@ package;
 import Discord.DiscordClient;
 #end
 import flixel.FlxG;
+import api.GameJolt;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
@@ -36,6 +37,7 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'freeplay',
 		'credits',
+		'gamejolt', 	
 		'options',
 		'mods'
 	];
@@ -237,6 +239,8 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new StoryMenuState());
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
+									case 'gamejolt':
+										MusicBeatState.switchState(new GameJolt());
 									//case 'awards':
 										//MusicBeatState.switchState(new AchievementsMenuState());
 									case 'credits':
@@ -251,7 +255,7 @@ class MainMenuState extends MusicBeatState
 					});
 				}
 			}
-			else if (FlxG.keys.anyJustPressed(debugKeys) #if android || _virtualpad.buttonE.justPressed #end)
+			else if (FlxG.keys.anyJustPressed(debugKeys) #if android || _virtualpad.buttonE.justPressed #end))
 			{
 				selectedSomethin = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
