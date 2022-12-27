@@ -482,6 +482,7 @@ class GameJolt extends MusicBeatState
 			case SHA1:
 				URL += '&signature=' + Sha1.encode(URL + private_key);
 		}
+	}
 	//////////////////////////////////////////////////////
 
 	static function get_initialized():Bool
