@@ -485,7 +485,7 @@ class GameJolt extends MusicBeatState
 
 		http.onData = function(data:String)
 		{
-			var http:Http = new Http;
+			var http:Http = new Http();
 			
 			trace('[COMPLETE] - Data was sended successfully from the API! Casting to the callback...');
 			if (CallBack != null)
