@@ -3,7 +3,7 @@ package;
 // GameJolt things
 import flixel.addons.ui.FlxUIState;
 import haxe.iterators.StringIterator;
-import tentools.GJApi;
+import GJApi;
 
 // Login things
 import flixel.ui.FlxButton;
