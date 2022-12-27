@@ -18,8 +18,6 @@ enum Encoding
  */
 class GameJolt extends MusicBeatState
 {
-class GameJolt
-{
 	//////////////////////////////////////////////////////
 
 	private static final API_PAGE:String = 'https://api.gamejolt.com/api/game';
@@ -516,5 +514,4 @@ class GameJolt
 	}
 
 	//////////////////////////////////////////////////////
-}
 }
