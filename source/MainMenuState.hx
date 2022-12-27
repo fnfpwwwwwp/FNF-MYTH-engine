@@ -4,7 +4,6 @@ package;
 import Discord.DiscordClient;
 #end
 import flixel.FlxG;
-import GameJolt;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
@@ -36,8 +35,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-		'credits',
-		'gamejolt', 	
+		'credits', 	
 		'options',
 		'mods'
 	];
@@ -239,8 +237,6 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new StoryMenuState());
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
-									case 'gamejolt':
-										MusicBeatState.switchState(new GameJolt());
 									case 'credits':
 										MusicBeatState.switchState(new CreditsState());
 									case 'options':
