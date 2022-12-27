@@ -132,9 +132,11 @@
 	<haxelib name="faxe" if='switch'/>
 	<!--<haxelib name="polymod"/> -->
 	<haxelib name="discord_rpc" if="desktop"/>
+	<haxelib name="tentools" />
+	<haxelib name="systools" />
+	<ndll name="systools" haxelib="systools" />
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 	<haxelib name="extension-videoview" if="android"/>
-	<haxelib name="gamejolt-integration"/>
 	<haxelib name="extension-androidtools" if="android"/>
 
 	<config:android permission="android.permission.READ_EXTERNAL_STORAGE" if="android"/>
