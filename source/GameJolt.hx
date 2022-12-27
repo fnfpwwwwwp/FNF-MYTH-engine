@@ -1,4 +1,4 @@
-package api;
+package;
 
 import haxe.Http;
 import haxe.Json;
