@@ -483,10 +483,7 @@ class GameJolt extends MusicBeatState
 				URL += '&signature=' + Sha1.encode(URL + private_key);
 		}
 
-		if (EncodeURL)
-			page = StringTools.urlEncode(URL);
-
-		var http:Http = new Http(page);
+		var http:Http = new Http;
 		http.onData = function(data:String)
 		{
 			trace('[COMPLETE] - Data was sended successfully from the API! Casting to the callback...');
