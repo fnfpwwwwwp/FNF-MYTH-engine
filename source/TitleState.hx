@@ -553,10 +553,6 @@ class TitleState extends MusicBeatState
 								}
 							});
 							FlxG.sound.music.fadeOut();
-							if(FreeplayState.vocals != null)
-							{
-								FreeplayState.vocals.fadeOut();
-							}
 							closedState = true;
 							transitioning = true;
 							playJingle = true;
