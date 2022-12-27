@@ -1,5 +1,7 @@
 package;
 
+import GameJolt;
+import GameJolt.GameJoltAPI;
 import flixel.graphics.FlxGraphic;
 import flixel.FlxG;
 import flixel.FlxGame;
@@ -17,9 +19,10 @@ class Main extends Sprite
 	var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
 	var initialState:Class<FlxState> = TitleState; // The FlxState the game starts with.
 	var zoom:Float = -1; // If -1, zoom is automatically calculated to fit the window dimensions.
-	var framerate:Int = 60; // How many frames per second the game should run at.
-	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
-	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
+	var framerate:Int = 60; 
+	var skipSplash:Bool = true; 
+	var startFullscreen:Bool = false; 
+	public static var gjToastManager:GJToastManager; //Toast For Advice
 	public static var fpsVar:FPS;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
@@ -32,8 +35,6 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-
- 	        SUtil.gameCrashCheck();
 
 		if (stage != null)
 		{
@@ -57,8 +58,15 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
+		gjToastManager = new GJToastManager();
+		addChild(gjToastManager); //adding the toddler
+		
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
+
+		var res = ClientPrefs.screenRes.split('x');
+		gameWidth = Std.parseInt(res[0]);
+		gameHeight = Std.parseInt(res[1]);
 
 		if (zoom == -1)
 		{
@@ -69,8 +77,6 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
-		SUtil.doTheCheck();
-
 		#if !debug
 		initialState = TitleState;
 		#end
@@ -78,6 +84,7 @@ class Main extends Sprite
 		ClientPrefs.loadDefaultKeys();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
+		#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		Lib.current.stage.align = "tl";
@@ -85,10 +92,9 @@ class Main extends Sprite
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
-
-		#if html5
-		FlxG.autoPause = false;
-		FlxG.mouse.visible = false;
 		#end
+
+		FlxG.autoPause = true;
+		FlxG.mouse.visible = false;
 	}
 }
