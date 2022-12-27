@@ -16,7 +16,7 @@ enum Encoding
  * 
  * @author Mihai Alexandru (M.A. Jigsaw)
  */
-class GameJoltClient
+class GameJolt
 {
 	//////////////////////////////////////////////////////
 
