@@ -16,6 +16,8 @@ enum Encoding
  * 
  * @author Mihai Alexandru (M.A. Jigsaw)
  */
+class ModsMenuState extends MusicBeatState
+{
 class GameJolt
 {
 	//////////////////////////////////////////////////////
@@ -514,4 +516,5 @@ class GameJolt
 	}
 
 	//////////////////////////////////////////////////////
+}
 }
